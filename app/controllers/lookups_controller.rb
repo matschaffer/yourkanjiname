@@ -3,6 +3,6 @@ class LookupsController < ApplicationController
   end
 
   def create
-    redirect_to name_path(params[:lookup][:name].downcase)
+    redirect_to name_path(params[:lookup][:name])
   end
 end

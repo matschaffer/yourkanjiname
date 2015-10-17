@@ -14,11 +14,12 @@
 
   <div class="text-center">
 
-      <p>Sorry, we don't have a translation for "<%= @entered_name %>" yet.</p>
+      <h4>Sorry, we don't have a translation for "<%= @entered_name %>" yet.</h4>
 
-      <p>Enter your email here and we'll let you know as soon as we do.</p>
+      <h4>Enter your email here and we'll let you know as soon as we do.</h4>
 
       <%= form_for NameInterest.new(entered_name: @entered_name) do |f| %>
+        <%= f.label :email_address, 'Email', class: 'hidden' %>
         <%= f.text_field :email_address %>
         <%= f.hidden_field :entered_name %>
         <%= f.submit 'Let me know!' %>

@@ -6,7 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Admin.create!(email: 'mat@schaffer.me', password: 'abcd1234', password_confirmation: 'abcd1234')
+admins = %w(
+  mat@schaffer.me
+  riku@tanide.net
+  privater.net@gmail.com
+  yamanashi@axis-corp.com
+  yamaneko3go@gmail.com
+)
+
+admins.each { |email| Admin.create!(email: email, password: 'abcd1234', password_confirmation: 'abcd1234') }
 
 mathew = SourceName.create!(country: 'US', name: 'mathew')
 mathew.transliterations.create!(kanji: '魔臭', hiragana: 'ましゅう', romaji: 'ma-shuu', explanation: 'Stink devil')
