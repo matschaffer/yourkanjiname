@@ -1,9 +1,18 @@
 <%= render 'shared/lookup_form' %>
 
+<% transliteration = @name.transliterations.first %>
+
+<% content_for :open_graph do %>
+  <meta property="og:url"           content="<%= request.original_url %>" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="YourKanjiName: <%= transliteration.kanji %>" />
+  <meta property="og:description"   content="My name in Japanese is '<%= transliteration.romaji %>', see what yours is!" />
+  <meta property="og:image"         content="<%= image_path('sensu.png') %>" />
+<% end %>
+
 <div class="text-center">
     <h4>Hi <%= @entered_name.capitalize %>, your name in Japanese kanji is:</h4>
 
-    <% transliteration = @name.transliterations.first %>
     <h2><%= transliteration.kanji %></h2>
 </div>
 
@@ -16,8 +25,12 @@
 
     <div class="col-md-6">
         <p><strong>Meaning:</strong></p>
-        <p><%= transliteration.explanation || 'None added yet' %></p>
+        <p><%= transliteration.explanation %></p>
     </div>
+</div>
+
+<div class="text-center">
+    <div class="fb-share-button" data-href="<%= request.original_url %>" data-layout="button_count"></div>
 </div>
 
 <div class="row">
