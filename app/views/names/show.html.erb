@@ -2,6 +2,10 @@
 
 <% transliteration = @name.transliterations.first %>
 
+<% content_for :title do %>
+  YourKanjiName: <%= transliteration.kanji %>
+<% end %>
+
 <% content_for :open_graph do %>
   <meta property="og:url"           content="<%= request.original_url %>" />
   <meta property="og:type"          content="website" />
