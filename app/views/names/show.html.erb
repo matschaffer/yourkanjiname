@@ -12,14 +12,18 @@
 
 <% else %>
 
-  <p>Sorry, we don't have a translation for "<%= @entered_name %>" yet.</p>
+  <div class="text-center">
 
-  <p>Enter your email here and we'll let you know as soon as we do.</p>
+      <p>Sorry, we don't have a translation for "<%= @entered_name %>" yet.</p>
 
-  <%= form_for NameInterest.new(entered_name: @entered_name) do |f| %>
-    <%= f.text_field :email_address %>
-    <%= f.hidden_field :entered_name %>
-    <%= f.submit 'Let me know!' %>
-  <% end %>
+      <p>Enter your email here and we'll let you know as soon as we do.</p>
+
+      <%= form_for NameInterest.new(entered_name: @entered_name) do |f| %>
+        <%= f.text_field :email_address %>
+        <%= f.hidden_field :entered_name %>
+        <%= f.submit 'Let me know!' %>
+      <% end %>
+
+  </div>
 
 <% end %>
