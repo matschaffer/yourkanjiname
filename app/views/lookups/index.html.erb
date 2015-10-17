@@ -1,4 +1,5 @@
-<%= simple_form_for @lookup do |f| %>
-  <%= f.input :name %>
-  <%= f.button :submit %>
+<%= form_for Lookup.new do |f| %>
+  <%= f.label :name, 'Your name', class: 'hidden' %>
+  <%= f.text_field :name %>
+  <%= f.submit 'Create' %>
 <% end %>

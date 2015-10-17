@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+mathew = SourceName.create(country: 'US', name: 'mathew')
+mathew.transliterations.create(kanji: '魔臭', hiragana: 'ましゅう', romaji: 'ma-shuu', explanation: 'Stink devil')

@@ -1,6 +1,5 @@
 class LookupsController < ApplicationController
   def index
-    @lookup = Lookup.new
   end
 
   def create
