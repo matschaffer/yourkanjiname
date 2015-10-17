@@ -21,6 +21,7 @@ gem 'puma'
 gem 'simple_form'
 gem 'devise'
 gem 'rails_admin', :github => 'sferik/rails_admin'
+gem 'http_accept_language'
 group :development do
   gem 'better_errors'
   gem 'hub', :require=>nil
