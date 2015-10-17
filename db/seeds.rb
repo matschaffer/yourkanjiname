@@ -6,5 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-mathew = SourceName.create(country: 'US', name: 'mathew')
-mathew.transliterations.create(kanji: '魔臭', hiragana: 'ましゅう', romaji: 'ma-shuu', explanation: 'Stink devil')
+Admin.create!(email: 'mat@schaffer.me', password: 'abcd1234', password_confirmation: 'abcd1234')
+
+mathew = SourceName.create!(country: 'US', name: 'mathew')
+mathew.transliterations.create!(kanji: '魔臭', hiragana: 'ましゅう', romaji: 'ma-shuu', explanation: 'Stink devil')
