@@ -3,5 +3,6 @@ class NamesController < ApplicationController
     country = "US"
     @entered_name = params[:id]
     @name = SourceName.where(country: country, name: @entered_name.downcase).first
+    render 'not_found', status: 404 if @name.nil?
   end
 end
