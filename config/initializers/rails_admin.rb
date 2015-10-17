@@ -1,4 +1,5 @@
 RailsAdmin.config do |config|
+  config.main_app_name = ["YourKanjiName.com", "Admin"]
 
   ### Popular gems integration
 
