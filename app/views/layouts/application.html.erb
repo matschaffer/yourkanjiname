@@ -25,5 +25,11 @@
     <%= yield %>
 </main>
 
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">Questions? <%= mail_to 'mat+yourkanjiname@schaffer.me', 'Email us', subject: 'YourKanjiName question' %>.</p>
+    </div>
+</footer>
+
 </body>
 </html>

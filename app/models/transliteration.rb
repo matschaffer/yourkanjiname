@@ -7,6 +7,6 @@ class Transliteration < ActiveRecord::Base
 
   def explanation
     return super unless super.empty?
-    'A mysterious, unexplained name.'
+    "A mysterious, unexplained name we're furiously researching."
   end
 end
