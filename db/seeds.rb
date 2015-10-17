@@ -17,4 +17,4 @@ admins = %w(
 admins.each { |email| Admin.create!(email: email, password: 'abcd1234', password_confirmation: 'abcd1234') }
 
 mathew = SourceName.create!(country: 'US', name: 'mathew')
-mathew.transliterations.create!(kanji: '魔臭', hiragana: 'ましゅう', romaji: 'ma-shuu', explanation: 'Stink devil')
+mathew.transliterations.create!(kanji: '魔臭', katakana: 'マシュー', romaji: 'ma-shuu', explanation: 'Stink devil')
