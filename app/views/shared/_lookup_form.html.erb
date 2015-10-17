@@ -3,9 +3,11 @@
 
     <p class="lead">You put in your name, you get your name in Japanese kanji.</p>
 
-    <%= form_for Lookup.new do |f| %>
-      <%= f.label :name, 'Your name', class: 'hidden' %>
-      <%= f.text_field :name %>
-      <%= f.submit 'Create' %>
+    <%= form_for Lookup.new, html: { class: 'form-inline' } do |f| %>
+      <div class="form-group">
+          <%= f.label :name, 'Your name', class: 'hidden' %>
+          <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      <%= f.submit 'Create', class: 'btn btn-info' %>
     <% end %>
 </div>

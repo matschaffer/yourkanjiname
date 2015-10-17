@@ -4,8 +4,8 @@
 
 .sensu {
   position: relative;
-  width: 500px;
-  margin: auto;
+  width: 300px;
+  margin: 20px auto 20px auto;
 }
 
 .sensu span {
@@ -16,13 +16,13 @@
   writing-mode: vertical-rl;
 
   position: absolute;
-  top: 65px;
-  left: 86px;
+  top: 36px;
+  left: 45px;
 
   -ms-transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 
-  font-size: 4em;
+  font-size: 3em;
   font-family: 'Hiragino Mincho Pro', 'MS PMincho', serif;
 }

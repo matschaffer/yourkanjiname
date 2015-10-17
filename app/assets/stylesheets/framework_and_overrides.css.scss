@@ -38,8 +38,10 @@ main {
   padding-bottom: 80px;
   background-image: image-url("back.png");
   background-size: cover;
-  }
+  max-width: 730px;
+}
+
 section {
   @extend .row;
   margin-top: 20px;
-  }
+}

@@ -3,10 +3,41 @@
 <div class="text-center">
     <h4>Hi <%= @entered_name.capitalize %>, your name in Japanese kanji is:</h4>
 
-    <h2><%= @name.transliterations.first.kanji %></h2>
+    <% transliteration = @name.transliterations.first %>
+    <h2><%= transliteration.kanji %></h2>
+</div>
 
-    <div class="sensu">
-        <span><%= @name.transliterations.first.kanji %></span>
-        <%= image_tag 'sensu.png' %>
+<div class="row">
+  <div class="col-md-6">
+      <p>In Katakana: <%= transliteration.katakana %></p>
+
+      <p>Pronounced: <%= transliteration.romaji %></p>
+  </div>
+
+    <div class="col-md-6">
+        <p><strong>Meaning:</strong></p>
+        <p><%= transliteration.explanation || 'None added yet' %></p>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="sensu">
+            <span><%= @name.transliterations.first.kanji %></span>
+            <%= image_tag 'sensu.png' %>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="sensu">
+            <span><%= @name.transliterations.first.kanji %></span>
+            <%= image_tag 'sensu.png' %>
+        </div>
+    </div>
+
+</div>
+
+<div class="text-center">
+    <%= link_to 'Buy a product', 'http://bit.ly/kanjisurvey', class: 'btn btn-primary' %>
+</div>
+
