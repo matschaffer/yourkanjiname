@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151017013153) do
+ActiveRecord::Schema.define(version: 20151017034531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20151017013153) do
   create_table "transliterations", force: :cascade do |t|
     t.integer  "source_name_id"
     t.string   "kanji"
-    t.string   "hiragana"
+    t.string   "katakana"
     t.string   "romaji"
     t.text     "explanation"
     t.datetime "created_at",     null: false
