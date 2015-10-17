@@ -31,19 +31,21 @@ namespace :import do
     (2..ws.num_rows).each do |row|
       name = ws[row, 2].strip.downcase
       source_name = SourceName.find_or_create_by(name: name, country: country)
-      transliteration = {
+      transliteration_attributes = {
           katakana: ws[row, 3].strip,
           romaji: ws[row, 4].strip
       }
 
       3.times do |i|
         kanji = ws[row, 5+i*2].strip
+
         # remove some copy-paste junk not visibile in spreadsheet
         kanji = kanji.gsub("\b", '').gsub("\ufffd", '')
+
         explanation = ws[row, 6+i*2].strip
         unless kanji.empty?
-          attributes = transliteration.merge({ kanji: kanji, explanation: explanation })
-          source_name.transliterations.find_or_create_by(attributes)
+          transliteration = source_name.transliterations.find_or_create_by(kanji: kanji)
+          transliteration.update_attributes(transliteration_attributes.merge(explanation: explanation))
         end
       end
     end
