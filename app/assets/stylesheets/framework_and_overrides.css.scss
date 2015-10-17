@@ -36,9 +36,12 @@ img {
 main {
   @extend .container;
   padding-bottom: 80px;
+  max-width: 730px;
+}
+
+body {
   background-image: image-url("back.png");
   background-size: cover;
-  max-width: 730px;
 }
 
 section {
