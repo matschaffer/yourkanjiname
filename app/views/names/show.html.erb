@@ -1,11 +1,25 @@
+<%= render 'shared/lookup_form' %>
+
 <% if @name %>
-  <%= @name.transliterations.first.kanji %>
+
+  <div class="text-center">
+      <h4>Hi <%= @entered_name.capitalize %>, your name in Japanese kanji is:</h4>
+
+      <h2><%= @name.transliterations.first.kanji %></h2>
+
+      <%= image_tag 'sensu.jpg' %>
+  </div>
+
 <% else %>
+
   <p>Sorry, we don't have a translation for "<%= @entered_name %>" yet.</p>
+
   <p>Enter your email here and we'll let you know as soon as we do.</p>
+
   <%= form_for NameInterest.new(entered_name: @entered_name) do |f| %>
     <%= f.text_field :email_address %>
     <%= f.hidden_field :entered_name %>
     <%= f.submit 'Let me know!' %>
   <% end %>
+
 <% end %>

@@ -1,0 +1,11 @@
+<div class="text-center">
+    <h1>Get your name in Japanese Kanji!</h1>
+
+    <p class="lead">You put in your name, you get your name in Japanese kanji.</p>
+
+    <%= form_for Lookup.new do |f| %>
+      <%= f.label :name, 'Your name', class: 'hidden' %>
+      <%= f.text_field :name %>
+      <%= f.submit 'Create' %>
+    <% end %>
+</div>
