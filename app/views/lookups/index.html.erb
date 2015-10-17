@@ -1,1 +1,12 @@
 <%= render 'shared/lookup_form' %>
+
+<p>You'll get a hand-crafted transliteration of your name into Japanese so that it's readable, has interesting meaning and pronounced as close to your own name as possible.</p>
+
+<p>Try it out!</p>
+
+<h3>A few example names</h3>
+<ul>
+    <% %w(ethan noah jeremy).each do |name| %>
+      <li><%= link_to name.capitalize, name_path(name) %></li>
+    <% end %>
+</ul>
