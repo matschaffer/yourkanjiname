@@ -25,6 +25,10 @@ gem 'http_accept_language'
 
 gem 'google_drive'
 
+gem 'mini_magick'
+
+gem 'prawn'
+
 group :development do
   gem 'better_errors'
   gem 'hub', :require=>nil

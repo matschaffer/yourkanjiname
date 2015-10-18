@@ -159,6 +159,7 @@ GEM
       mime-types (>= 1.16, < 3)
     memoist (0.12.0)
     mime-types (2.6.2)
+    mini_magick (4.3.6)
     mini_portile (0.6.2)
     minitest (5.8.1)
     multi_json (1.11.2)
@@ -175,7 +176,11 @@ GEM
       multi_xml (~> 0.5)
       rack (~> 1.2)
     orm_adapter (0.5.0)
+    pdf-core (0.6.0)
     pg (0.18.3)
+    prawn (2.0.2)
+      pdf-core (~> 0.6.0)
+      ttfunk (~> 1.4.0)
     puma (2.14.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
@@ -286,6 +291,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.1)
+    ttfunk (1.4.0)
     turbolinks (2.5.3)
       coffee-rails
     tzinfo (1.2.2)
@@ -325,7 +331,9 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   launchy
+  mini_magick
   pg
+  prawn
   puma
   quiet_assets
   rails (= 4.2.4)
