@@ -60,8 +60,9 @@
 
     <div class="col-md-6">
         <div class="tshirt">
-            <span><%= @transliteration.kanji %></span>
-            <%= image_tag 'tshirt.png' %>
+            <span class="kanji-left"><%= @transliteration.kanji %></span>
+            <span class="kanji-right"><%= @transliteration.kanji %></span>
+            <%= image_tag 'tshirt.jpg' %>
         </div>
     </div>
 

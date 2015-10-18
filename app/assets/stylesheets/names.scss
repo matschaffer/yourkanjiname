@@ -15,13 +15,24 @@
   -ms-writing-mode: vertical-rl;
   writing-mode: vertical-rl;
 
+  color: #eee;
   position: absolute;
-  top: 50px;
-  left: 92px;
 
-  font-size: 3em;
+  font-size: 1.5em;
   font-family: 'Hiragino Mincho Pro', 'MS PMincho', serif;
 }
+
+.tshirt .kanji-left {
+  top: 83px;
+  left: 55px;
+}
+
+.tshirt .kanji-right {
+  top: 105px;
+  left: 167px;
+  font-size: 2em;
+}
+
 
 .sensu {
   position: relative;
