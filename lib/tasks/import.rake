@@ -1,6 +1,6 @@
 namespace :import do
-  desc 'Get an auth token from google'
-  task :auth do
+  desc 'Imports names from our google doc'
+  task names: :environment do
     require 'google/api_client'
     require 'google_drive'
 
@@ -18,15 +18,11 @@ namespace :import do
     auth.code = $stdin.gets.chomp
     auth.fetch_access_token!(:connection => client.connection)
     access_token = auth.access_token
-    puts "Access token is: #{access_token}"
-  end
 
-  desc 'Imports names from our google doc'
-  task names: :environment do
     country = 'US'
 
-    access_token = ENV['GOOGLE_ACCESS_TOKEN']
     session = GoogleDrive.login_with_oauth(access_token)
+
     ws = session.spreadsheet_by_key("1Rq4Odoc0cgF11g2xfqHVtpo0DNzX_x3-b0_MK-V8VF4").worksheets[0]
     (2..ws.num_rows).each do |row|
       name = ws[row, 2].strip.downcase
