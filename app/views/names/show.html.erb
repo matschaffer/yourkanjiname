@@ -30,11 +30,14 @@
     <div class="col-md-6">
         <p><strong>Meaning:</strong></p>
         <p><%= transliteration.explanation %></p>
+
     </div>
 </div>
 
-<div class="text-center">
-    <div class="fb-share-button" data-href="<%= request.original_url %>" data-layout="button_count"></div>
+<div class="text-center sharing">
+    <p>
+        <em>Cool Kanji? Share it on facebook!</em> <span class="fb-share-button" data-href="<%= request.original_url %>" data-layout="button_count"></span>
+    </p>
 </div>
 
 <div class="row">
@@ -55,6 +58,6 @@
 </div>
 
 <div class="text-center">
-    <%= link_to 'Buy a product', 'https://jp.surveymonkey.com/r/SD5T3TH', class: 'btn btn-primary' %>
+    <%= link_to 'Want to buy something with your Kanji?', 'https://jp.surveymonkey.com/r/SD5T3TH', class: 'btn btn-primary' %>
 </div>
 
