@@ -1,36 +1,46 @@
 <%= render 'shared/lookup_form' %>
 
-<% transliteration = @name.transliterations.first %>
-
 <% content_for :title do %>
-  YourKanjiName: <%= transliteration.kanji %>
+  YourKanjiName: <%= @transliteration.kanji %>
 <% end %>
 
 <% content_for :open_graph do %>
   <meta property="og:url"           content="<%= request.original_url %>" />
   <meta property="og:type"          content="website" />
-  <meta property="og:title"         content="YourKanjiName: <%= transliteration.kanji %>" />
-  <meta property="og:description"   content="My name in Japanese is '<%= transliteration.romaji %>', see what yours is!" />
+  <meta property="og:title"         content="YourKanjiName: <%= @transliteration.kanji %>" />
+  <meta property="og:description"   content="My name in Japanese is '<%= @transliteration.romaji %>', see what yours is!" />
   <meta property="og:image"         content="<%= image_url('sensu.png') %>" />
 <% end %>
 
-<div class="text-center">
+<div class="text-center" id="main-transliteration">
     <h4>Hi <%= @entered_name.capitalize %>, your name in Japanese kanji is:</h4>
 
-    <h2><%= transliteration.kanji %></h2>
+    <h2><%= @transliteration.kanji %></h2>
 </div>
 
 <div class="row">
   <div class="col-md-6">
-      <p>In Katakana: <%= transliteration.katakana %></p>
+      <p>In Katakana: <%= @transliteration.katakana %></p>
 
-      <p>Pronounced: <%= transliteration.romaji %></p>
+      <p>Pronounced: <%= @transliteration.romaji %></p>
+
+      <% unless @alternate_transliterations.empty? %>
+        <p id="alternate-transliterations">
+            Other options:
+            <ul>
+                <% @alternate_transliterations.each do |transliteration| %>
+                  <li>
+                      <%= link_to transliteration.kanji, [@name, transliteration] %> (<%= transliteration.explanation %>)
+                  </li>
+                <% end %>
+            </ul>
+        </p>
+      <% end %>
   </div>
 
     <div class="col-md-6">
         <p><strong>Meaning:</strong></p>
-        <p><%= transliteration.explanation %></p>
-
+        <p><%= @transliteration.explanation %></p>
     </div>
 </div>
 
@@ -43,14 +53,14 @@
 <div class="row">
     <div class="col-md-6">
         <div class="sensu">
-            <span><%= @name.transliterations.first.kanji %></span>
+            <span><%= @transliteration.kanji %></span>
             <%= image_tag 'sensu.png' %>
         </div>
     </div>
 
     <div class="col-md-6">
         <div class="tshirt">
-            <span><%= @name.transliterations.first.kanji %></span>
+            <span><%= @transliteration.kanji %></span>
             <%= image_tag 'tshirt.png' %>
         </div>
     </div>
