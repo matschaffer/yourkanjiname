@@ -16,8 +16,6 @@ class TransliterationsController < ApplicationController
   private
 
   def render_for_zazzle
-    Dir.mktmpdir do |dir|
-      send_file @transliteration.generate_pdf(dir)
-    end
+    send_file @transliteration.generate_pdf
   end
 end

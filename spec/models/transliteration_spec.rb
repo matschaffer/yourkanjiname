@@ -5,11 +5,11 @@ describe Transliteration do
   let (:transliteration2) { create(:transliteration, kanji: '魔臭') }
   let (:transliteration3) { create(:transliteration, kanji: '超魔臭') }
 
+  let (:transliterations) { [ transliteration1, transliteration2, transliteration3 ]}
+
   it 'generates pdfs' do
-    Dir.mktmpdir do |dir|
-      expect(transliteration1.generate_pdf(dir)).to match('1.png')
-      expect(transliteration2.generate_pdf(dir)).to match('2.png')
-      expect(transliteration3.generate_pdf(dir)).to match('3.png')
+    transliterations.each do |transliteration|
+      expect(transliteration.generate_pdf).to match("#{transliteration.id}.png")
     end
   end
 end
